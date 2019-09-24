@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <title>Curso Javascript</title>
+</head>
+<body>
+<div id="app">
+    <input type="text" name="nome" id="nome"/>
+    <button class="botao">Adicionar</button>
+    <div class="box"></div>
+</div>
+
+
+<script>
+    // buscar elementos
+    //var inputElement = document.getElementById('nome');
+    //var inputElement = document.getElementsByTagName('input');
+    //var inputElement = document.getElementsByClassName('nome');
+    var inputElement= document.querySelector('input[name=nome]');
+    var btnElement = document.querySelector('button.botao');
+
+    btnElement.onclick = function () {
+        var text = inputElement.value;
+        alert(text);
+    }
+
+    var linkElement = document.createElement('a');
+    linkElement.setAttribute('href', 'http//www.gooogle.com.br');
+    var textElement = document.createTextNode('Acessar o google');
+    linkElement.appendChild(textElement);
+    var containerDocumet = document.querySelector('#app');
+    containerDocumet.appendChild(linkElement);
+
+    var boxElement = document.querySelector('.box');
+    boxElement.style.width = 100;
+    boxElement.style.height = 100;
+    boxElement.style.backgroundColor = '#f00';
+</script>
+</body>
+</html>
